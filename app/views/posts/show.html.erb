@@ -1,0 +1,6 @@
+	<h1><%= @post.title %></h1>
+
+  <p>Filed under: <% @post.categories.each do |category| %></p>
+
+  <%= @post.content %>
+

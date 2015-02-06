@@ -1,0 +1,12 @@
+<h1>This is the index view for Posts</h1>
+<% @posts.each do |post| %>
+ <div>
+   <h3><%= post.title %></h3>
+         <p>Published on <%= post.created_at.strftime('%b %d, %Y') %></p>
+   <p>Filed under: <% post.categories.each do |category| %>
+                     <%= category.name %>&nbsp;
+                   <% end %>
+   </p>
+   <p><%= truncate(post.content, length: 200) %></p>
+ </div>
+<% end %>
