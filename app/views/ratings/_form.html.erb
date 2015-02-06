@@ -1,0 +1,24 @@
+<%= form_for([@post, @post.ratings.build]) do |f| %>
+  <div class="field">
+    <div id="star-rating"></div>
+  </div>
+    <%= f.submit %>
+<% end %>
+
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'rating[rating_number]'
+  });
+</script>

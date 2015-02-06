@@ -1,6 +1,43 @@
+<div>
 	<h1><%= @post.title %></h1>
+	<p>Published <%= @post.created_at.strftime('%b %d, %Y') %></p>
+	<p>Filed under: <% @post.categories.each do |category| %>
+  										<%= link_to category.name, category %>&nbsp;
+  									<% end %>
+  </p>
+	<div><%= @post.content %></div>
+</div>
 
-  <p>Filed under: <% @post.categories.each do |category| %></p>
+		<h2><%= @post.comments.count %> Comments</h2>
+		<%= render @post.comments %>
 
-  <%= @post.content %>
+<h2><%= @post.ratings.count %> Ratings</h2>
+    <%= render @post.ratings %>
 
+		<h3>Add a comment:</h3>
+		<%= render "comments/form" %>
+
+<h3> Add a rating: </h3>
+    <%= render 'ratings/form'  %>
+
+
+
+
+
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'rating[rating_number]'
+  });
+</script>

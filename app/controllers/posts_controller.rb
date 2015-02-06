@@ -1,4 +1,5 @@
  class PostsController < ApplicationController
+   
    def index
      @posts = Post.order(updated_at: :desc).limit(25)
    end
@@ -22,6 +23,7 @@
    
 
   private
+   
    def post_params
      params.require(:post).permit(:title, :content, :category_ids => [])
    end
