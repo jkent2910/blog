@@ -1,12 +1,26 @@
-<h1>This is the index view for Posts</h1>
-<% @posts.each do |post| %>
- <div>
-   <h3><%= post.title %></h3>
-         <p>Published on <%= post.created_at.strftime('%b %d, %Y') %></p>
-   <p>Filed under: <% post.categories.each do |category| %>
-                     <%= category.name %>&nbsp;
-                   <% end %>
-   </p>
-   <p><%= truncate(post.content, length: 200) %></p>
- </div>
-<% end %>
+<div class="container-fluid">
+  <h4>Navigation</h4>
+</div> <!--- container-fluid --->
+
+<div class="container-fluid">
+  <h2>Header/Logo </h2>
+</div> <!--- container-fluid ---->
+
+<div class="container">
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-xs-8-offset-2 col-sm-8-offset-2">
+        <h2><%= post.title %></h2>
+        <%= image_tag post.image.url(:thumb) %>
+        <%= link_to "Read", post, class: "btn btn-primary btn-sm"%>
+        <%= post.comments.count %> Comments
+        <%= post.ratings.count %> Ratings
+        <h5><%= post.created_at.strftime('%b %d, %Y') %> </h5>
+      </div> <!---col xs-8-offset-2 col-sm-8-offset-2 --->
+    <%end%>
+  </div> <!--- row ---->
+  
+  
+  
+</div> <!-- container ---->
+

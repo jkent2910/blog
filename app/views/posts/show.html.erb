@@ -1,5 +1,6 @@
 <div>
 	<h1><%= @post.title %></h1>
+  <%= image_tag @post.image.url(:medium) %>
 	<p>Published <%= @post.created_at.strftime('%b %d, %Y') %></p>
 	<p>Filed under: <% @post.categories.each do |category| %>
   										<%= link_to category.name, category %>&nbsp;

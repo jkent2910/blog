@@ -5,10 +5,13 @@
      before_action :ensure_post_ownership, only: [:edit, :update, :destroy]
    
    def index
+     
      @posts = Post.order(updated_at: :desc).limit(25)
+    
    end
 
    def show
+     
      @post = Post.find(params[:id])
      
    end
@@ -34,7 +37,7 @@
 	def update
 		@post = Post.find(params[:id])
 
-    if @post.update(params[:post].permit(:title, :content, :category_ids => []))
+    if @post.update(params[:post].permit(:title, :content, :image, :category_ids => []))
 			redirect_to @post
 		else
 			render 'edit'
@@ -52,7 +55,7 @@
   private
    
    def post_params
-     params.require(:post).permit(:title, :content, :category_ids => [])
+     params.require(:post).permit(:title, :content, :image, :category_ids => [])
    end
 
   def ensure_post_ownership
@@ -60,6 +63,5 @@
       redirect_to root_path, "You do not have access to do perform that action"
     end
   end
-   
-   
+    
  end
