@@ -7,25 +7,56 @@
 </div> <!--- container-fluid ---->
 
 
-    <% @posts.each do |post| %>
+<% @posts.each do |post| %>
 <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-6 col-xs-6">
-          <%= image_tag post.image.url(:thumb) %>
+      
+      <!-- Small screens --->
+      <div class="visible-sm col-sm-6 visible-xs col-xs-6">
+        <%= image_tag post.image.url(:thumb) %>
       </div> <!---col xs-6 col-xs-6 --->
-      <div class="col-sm-6 col-xs-6">
+      <div class="visible-sm col-sm-6 visible-xs col-xs-6">
           <h3><%= post.title %></h3>
           <%= link_to "Read", post, class: "btn btn-primary btn-sm"%>
       </div> <!---col xs-6 col-xs-6 --->
-  </div> <!--- row ---->
+      
+
+      <!-- Large screens --->
+      
+      <div class="visible-md visible-lg col-md-4 col-md-offset-4">
+        <%= link_to post do %>
+        <%= image_tag post.image.url(:medium) %>
+        <% end %>
+      </div>
+  </div>
+  
+  <!--- Large screens ---->
+  
   <div class="row">
-    <div class="col-sm-4 col-xs-4">
+      <div class="visible-md visible-lg col-md-4 col-md-offset-4">
+        <h1><%= post.title %></h1>
+      </div>
+  </div> <!--- row ---->
+  
+    <div class="row">
+    <div class="visible-md visible-lg col-md-4 col-md-offset-4">
       <%= post.created_at.strftime('%b %d, %Y') %> 
     </div> <!-- col-sm-4 --->
-    <div class="col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
+    <div class="visible-md visible-lg col-md-4 col-md-offset-4">
         <%= post.ratings.count %> Ratings
     </div> <!-- col-sm-4 --->
   </div> <!-- row -->
+  
+  <!---- Small screens --->
+  <div class="row">
+    <div class="visible-sm visible-xs col-sm-4 col-xs-4">
+      <%= post.created_at.strftime('%b %d, %Y') %> 
+    </div> <!-- col-sm-4 --->
+    <div class="visible-sm visible-xs col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
+        <%= post.ratings.count %> Ratings
+    </div> <!-- col-sm-4 --->
+  </div> <!-- row -->
+
 </div> <!-- container ---->
 <%end%>
 
