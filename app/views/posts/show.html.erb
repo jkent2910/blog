@@ -3,26 +3,30 @@
 </div>
 
 <div class="container">
+  
+  
+  
+  <!--- Small screens ---->
   <div class="row">
-    <div class="col-xs-12 col-sm-12">
+    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
       <h3 class="text-center"><%= @post.title %></h3>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-12 text-center">
+    <div class="visible-xs visible-sm col-xs-12 col-sm-12 text-center">
       <%= image_tag @post.image.url(:thumb) %>
     </div>
   </div>
   
   <div class="row">
-    <div class="col-xs-12 col-sm-12">
+    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
       <p class="lead text-center">Published <%= @post.created_at.strftime('%b %d, %Y') %></p>
     </div>
   </div>
   
   <div class="row">
-    <div class="col-xs-12 col-sm-12">
+    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
       <p class="lead text-center">Filed under: <% @post.categories.each do |category| %>
   										<%= link_to category.name, category %>&nbsp;
   									<% end %>
@@ -30,7 +34,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-12">
+    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
       <p class="post_content">
         <%= @post.content %>
       </p>
@@ -38,38 +42,110 @@
   </div>
     
   <div class="row">
-    <div class="col-xs-12 col-sm-12">
-      <%= @post.comments.count %> Comments 
-		  <%= render @post.comments %> 
+    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
+      <h4>Comments</h4>
+      <% @comments.each do |comment| %>
+      <p><%= comment.name %></p>
+      <p><%= comment.body %></p>
+            </div>
+          <% end %>
     </div>
   </div>
   
   <div class="row">
-    <div class="col-xs-12 col-sm-12">
-      <p class="post_content">Add a comment: </p>
-      <p class="post_content">
-        <%= render "comments/form" %></p>
+    <div class="visible-xs visible-sm  col-xs-12 col-sm-12">
+        <%= link_to "Write a comment", new_post_comment_path(@post) %>
     </div>
   </div>
   
   <div class="row">
-    <div class="col-xs-12 col-sm-12">
-      <%= @post.ratings.count %> Ratings
+    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
+        <% @ratings.each do |rating| %>
+        <div class="star-rating" data-score= <%= rating.rating_number %></div>
+        <p><%= rating.rating_number %></p>
+        <%= @post.ratings.count %> Ratings
+      <% end %>
+      <%= link_to "Rate this post", new_post_rating_path(@post) %>
+    </div>
+  </div>
+  
+</div>
+  
+  
+  
+<!---- Large screens ----------->
+  
+<div class="container">
+  
+  <div class="row">
+    <div class="visible-md visible-lg col-md-12 col-lg-12">
+      <h1 class="text-center"><%= @post.title %></h1>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="visible-md visible-lg col-md-12 col-lg-12 text-center">
+      <%= image_tag @post.image.url(:medium) %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="visible-md visible-lg col-md-12 col-lg-12">
+      <p class="lead text-center">Published <%= @post.created_at.strftime('%b %d, %Y') %></p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="visible-md visible-lg col-md-12 col-lg-12">
+      <p class="lead text-center">Filed under: <% @post.categories.each do |category| %>
+  										<%= link_to category.name, category %>&nbsp;
+  									<% end %>
+      </p>    
+  </div>
+    
+    
+  <div class="row">
+    <div class="visible-md visible-lg col-md-12 col-lg-12">
       <p class="post_content">
-      <%= render @post.ratings %>
+        <%= @post.content %>
       </p>
     </div>
   </div>
-
+    
   <div class="row">
-    <div class="col-xs-12 col-sm-12">
-      <p class="post_content">Add a rating:</p>
-      <p class="post_content"><%= render 'ratings/form'  %></p>
+    <div class="visible-md visible-lg col-md-12 col-lg-12">
+      <h4>Comments</h4>
+      <% @comments.each do |comment| %>
+      <p><%= comment.name %></p>
+      <p><%= comment.body %></p>
+            </div>
+          <% end %>
     </div>
   </div>
-
-</div>
     
+  <div class="row">
+    <div class="visible-md visible-lg col-md-12 col-lg-12">
+        <%= link_to "Write a comment", new_post_comment_path(@post) %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="visible-md visible-lg col-md-12 col-lg-12">
+         <%= @post.ratings.count %> Ratings
+        <% @ratings.each do |rating| %>
+        <div class="star-rating" data-score= <%= rating.rating_number %></div>
+        <p><%= rating.rating_number %></p>
+
+      <% end %>
+
+    </div>
+          <%= link_to "Rate this post", new_post_rating_path(@post) %>
+  </div>
+  
+ 
+</div>
+   
+  <div class="container">
   <div class="row">
     
     <% if current_admin != Post.find(params[:id]).admin %>
@@ -81,6 +157,7 @@
     <% end %>
 
     </div>
+</div>
 
 
 <script>

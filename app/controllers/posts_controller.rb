@@ -14,8 +14,20 @@
      
      @post = Post.find(params[:id])
      
-   end
-
+     @comments = Comment.where(post_id: @post.id).order("created_at DESC")
+     
+     
+     @ratings = Rating.where(post_id: @post.id).order("created_at DESC")
+    
+    
+    if @rating.blank?
+      @avg_rating = 0 
+    else
+      @avg_rating = @ratings.average(:rating_number).round(2)
+    end
+     
+  end
+     
    def new
      @post = current_admin.posts.build
    end
