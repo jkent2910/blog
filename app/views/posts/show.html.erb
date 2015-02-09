@@ -60,13 +60,15 @@
   
   <div class="row">
     <div class="visible-xs visible-sm col-xs-12 col-sm-12">
+              <%= @post.ratings.count %> Ratings
         <% @ratings.each do |rating| %>
         <div class="star-rating" data-score= <%= rating.rating_number %></div>
         <p><%= rating.rating_number %></p>
-        <%= @post.ratings.count %> Ratings
+
       <% end %>
-      <%= link_to "Rate this post", new_post_rating_path(@post) %>
+
     </div>
+      <%= link_to "Rate this post", new_post_rating_path(@post) %>
   </div>
   
 </div>

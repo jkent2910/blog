@@ -20,6 +20,44 @@
 	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 }
 
+body {
+  padding-top: 70px;
+}
+
+h1 {
+  font-family: "futura-pt";
+  }
+/* --------------------------------------
+   Carousel
+   -------------------------------------- */
+
+#myCarousel {
+	margin-top: 60px;
+}
+
+.carousel-caption {
+	font-size: 24px;
+}
+
+.carousel-caption h4 {
+	font-size: 32px;
+}
+
+#myCarousel .item { height: 400px; }
+
+#slide1 {
+  background: url(image_path('happy.gif')) top center no-repeat; 
+}
+
+#slide2 {
+	background: url(image_path('healthy.gif')) top center no-repeat; 
+}
+
+#slide3 {
+	background: url(image_path('wealthy.gif')) top center no-repeat; 
+}
+
+
 
 p.post_content {
   padding-top: 10px;
