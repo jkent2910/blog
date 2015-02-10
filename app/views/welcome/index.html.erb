@@ -122,22 +122,28 @@
     <h3>New Posts</h3>
   </div>
 </div>
+
+
 <div class="container-fluid">
-  <% @posts.in_groups_of(2).each do |group| %>
+  <% @posts.each_slice(3).each do |posts| %>
   <div class="row">
+      <% posts.each do |post| %>
+      <div class="visible-md visible-lg col-md-4 col-lg-4">
+        <div class="post">
+          <div class="img_wrapper">
+            <%= link_to post do %>
+              <%= image_tag post.image.url(:medium) %> 
+            <% end %>
+          </div> <!--- image wrapper ---->
+            <h2> <%= link_to post.title, post %> </h2>
 
-      <% group.each do |post| %>
-      <div class="visible-md visible-lg col-lg-3 col-lg-offset-2 col-md-3 col-md-offset-3">
-      <%= post.title if post %>
-      </div>
-      <div class="visible-md visible-lg col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
-      <%= image_tag post.image.url(:medium) if post %>
-      </div>
-    <% end %>
-  </div>
-</div>
+        </div> <!---- post ----->
+      </div> <!---- col-md-4 ---->
+            <% end %>
+
+  </div> <!----- row ---->
 <% end %>
-
+</div> <!----- container-fluid ----->
 
 <div class="container-fluid">
     <div class="row">
