@@ -11,111 +11,28 @@
  * file per style scope.
  *
  */
+
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap"; 
 
-
-@mixin box-shadow {
-	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
-	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
-	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+.navbar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.navbar-default {
+  background-color: #FFEECA;
 }
 
-body {
-
+.navbar-default .navbar-brand {
+  color: #23429D;
 }
 
-$red: #DB6161;
-
-h1 {
-  font-family: "futura-pt";
-  }
-/* --------------------------------------
-   Carousel
-   -------------------------------------- */
-
-#myCarousel {
-	margin-top: 60px;
+.navbar-default .navbar-nav > li > a {
+  color: #23429D;
+  font-family: 'Bitter', serif;
 }
 
-.carousel-caption {
-	font-size: 24px;
-}
-
-.carousel-caption h4 {
-	font-size: 32px;
-}
-
-.carousel-control.left {
-    background-image: url(image_path('background.png'));
-
-}
-.carousel-control.right {
-    background-image: url(image_path('background.png'));
-
-}
-  
-  
-#myCarousel .item { height: 400px; }
-
-#slide1 {
-  background: url(image_path('happy.png')) top center no-repeat; 
-}
-
-#slide2 {
-	background: url(image_path('healthy.png')) top center no-repeat; 
-}
-
-#slide3 {
-	background: url(image_path('wealthy.png')) top center no-repeat; 
-}
-
-
-
-
-p.post_content {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-img {
-		-webkit-transition: all .3s ease-out;
-	  -moz-transition: all .3s ease-out;
-	  -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
-		&:hover {
-			transform: scale(1.075);
-		}
-}
-
-.post {
-	background: white;
-	border-radius: 5px;
-	margin-bottom: 40px;
-	@include box-shadow;
-	.image_wrapper {
-		max-width: 100%;
-		border-radius: 5px 5px 0 0;
-		overflow: hidden;
-	}
-	img {
-		width: 100%;
-		-webkit-transition: all .3s ease-out;
-	  -moz-transition: all .3s ease-out;
-	  -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
-		&:hover {
-			transform: scale(1.075);
-		}
-	}
-	h2 {
-		padding: 15px 5%;
-		margin: 0;
-		font-size: 20px;
-		font-weight: normal;
-		line-height: 1.5;
-		a {
-			color: $red;
-		}
-	}
+.navbar-default .navbar-nav > li > a:hover {
+  text-decoration: underline;
+  color: #23429D;
 }
