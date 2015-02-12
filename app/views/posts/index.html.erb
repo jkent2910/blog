@@ -1,63 +1,26 @@
-<div class="container-fluid">
-  <h4>Navigation</h4>
-</div> <!--- container-fluid --->
 
 <div class="container-fluid">
-  <h2>Header/Logo </h2>
-</div> <!--- container-fluid ---->
-
-
-<% @posts.each do |post| %>
-<div class="container-fluid">
-    <div class="row">
-      
-      <!-- Small screens --->
-      <div class="visible-sm col-sm-6 visible-xs col-xs-6">
-        <%= image_tag post.image.url(:thumb) %>
-      </div> <!---col xs-6 col-xs-6 --->
-      <div class="visible-sm col-sm-6 visible-xs col-xs-6">
-          <h3><%= post.title %></h3>
-          <%= link_to "Read", post, class: "btn btn-primary btn-sm"%>
-      </div> <!---col xs-6 col-xs-6 --->
-      
-
-      <!-- Large screens --->
-      
-      <div class="visible-md visible-lg col-md-4 col-md-offset-4">
-        <%= link_to post do %>
-        <%= image_tag post.image.url(:medium) %>
-        <% end %>
-      </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h3 class="recent">Welcome to my blog!</h3>
+    </div>
   </div>
-  
-  <!--- Large screens ---->
-  
+  <% @posts.each_slice(3).each do |posts| %>
   <div class="row">
-      <div class="visible-md visible-lg col-md-4 col-md-offset-4">
-        <h1><%= post.title %></h1>
-      </div>
-  </div> <!--- row ---->
-  
-    <div class="row">
-    <div class="visible-md visible-lg col-md-4 col-md-offset-4">
-      <%= post.created_at.strftime('%b %d, %Y') %> 
-    </div> <!-- col-sm-4 --->
-    <div class="visible-md visible-lg col-md-4 col-md-offset-4">
-        <%= post.ratings.count %> Ratings
-    </div> <!-- col-sm-4 --->
-  </div> <!-- row -->
-  
-  <!---- Small screens --->
-  <div class="row">
-    <div class="visible-sm visible-xs col-sm-4 col-xs-4">
-      <%= post.created_at.strftime('%b %d, %Y') %> 
-    </div> <!-- col-sm-4 --->
-    <div class="visible-sm visible-xs col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
-        <%= post.ratings.count %> Ratings
-    </div> <!-- col-sm-4 --->
-  </div> <!-- row -->
+      <% posts.each do |post| %>
+      <div class="col-md-4 col-lg-4">
+        <div class="post">
+          <div class="img_wrapper">
+            <%= link_to post do %>
+            <%= image_tag post.image.url(:medium), :class => "blog_img" %> 
+            <% end %>
+          </div> <!--- image wrapper ---->
+            <h2> <%= link_to post.title, post %> </h2>
 
-</div> <!-- container ---->
-<%end%>
+        </div> <!---- post ----->
+      </div> <!---- col-md-4 ---->
+            <% end %>
 
-
+  </div> <!----- row ---->
+<% end %>
+</div> <!----- container-fluid ----->

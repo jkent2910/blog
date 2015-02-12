@@ -1,1 +1,97 @@
-	 
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-lg-6">
+      <%= image_tag("name.png", :alt => "Hi I'm Julie", :class => "img-rounded") %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag("me and troy.jpg", :alt => "Me", :class => "img-circle img-responsive") %>
+    </div>
+    <div class="col-md-8 offset-4">
+        <p class="cursive">I'm a 20-something on a quest to live a: </p>
+        <p class="strong-cursive">happy, healthy, and wealthy life.</p>
+        <p class="front-text"> 
+        The wealth part has always been easy for me.  I have a net worth over $300,000 with NO inheritance and I haven't won the lottery.
+        People say money brings happiness, but I've battled anxiety, depression, and eating disorders.
+        Yep, it's the happy and healthy part of the equation that I struggle with.
+        So I'm here to help you (hopefully) become financially independent while sharing my journey to find health and happiness at the same time.
+        If you want to read more about me, you can read about my story here.
+        I'd love to hear from you, so please always feel free to drop me an <a href="mailto: jkent2910@gmail.com">e-mail</a>, <a href="/posts">comment on a blog</a>,
+          or catch up with me on <a href="twitter.com/jkent2910">Twitter!</a><p/> <br />
+       <p class="strong-cursive"> Keep me updated! </p> <br /> <br />
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="name"><p class="front-text">Name</p></label>
+            <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label for="email"><p class="front-text">Email</p></label>
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+          </div>
+          <button type="submit" class="btn btn-success"><p class="front-text">Let's do this!<p></button>
+        </form>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h3 class="recent">Recent Posts</h3>
+    </div>
+  </div>
+  <% @posts.each_slice(3).each do |posts| %>
+  <div class="row">
+      <% posts.each do |post| %>
+      <div class="col-md-4 col-lg-4">
+        <div class="post">
+          <div class="img_wrapper">
+            <%= link_to post do %>
+            <%= image_tag post.image.url(:medium), :class => "blog_img" %> 
+            <% end %>
+          </div> <!--- image wrapper ---->
+            <h2> <%= link_to post.title, post %> </h2>
+
+        </div> <!---- post ----->
+      </div> <!---- col-md-4 ---->
+            <% end %>
+
+  </div> <!----- row ---->
+<% end %>
+</div> <!----- container-fluid ----->
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 well">
+        <div class="graphic-wrap">
+        Mini-Course Graphic
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6">
+        <h3 class="recent">Start today!</h4>
+        <p class="front-text">You've made it to my site.  Take the next step.  Enroll in my FREE, 5-week mini-course that will get you on the path towards financial independence!  What do you have to lose?</p>
+      </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 well">
+        <div class="graphic-wrap">
+        Graphic
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+        Contact Us Form
+      </div>
+    </div>
+</div>
