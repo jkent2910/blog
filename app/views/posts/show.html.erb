@@ -1,153 +1,77 @@
-<div class="container-fluid">
-  Navigation & Links
-</div>
 
 <div class="container">
-  
-  
-  
-  <!--- Small screens ---->
   <div class="row">
-    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
-      <h3 class="text-center"><%= @post.title %></h3>
+    <div class="col-md-12 col-lg-12">
+      <h3 class="recent">
+        <%= @post.title %>
+      </h3>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="visible-xs visible-sm col-xs-12 col-sm-12 text-center">
-      <%= image_tag @post.image.url(:thumb) %>
+    <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <h3 class="blog-time">
+        <%= @post.created_at.strftime('%b %d, %Y') %>
+      </h3>
     </div>
-  </div>
-  
-  <div class="row">
-    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
-      <p class="lead text-center">Published <%= @post.created_at.strftime('%b %d, %Y') %></p>
     </div>
   </div>
   
-  <div class="row">
-    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
-      <p class="lead text-center">Filed under: <% @post.categories.each do |category| %>
-  										<%= link_to category.name, category %>&nbsp;
-  									<% end %>
-      </p>    
-  </div>
-
-  <div class="row">
-    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
-      <p class="post_content">
-        <%= @post.content %>
-      </p>
-    </div>
-  </div>
-    
-  <div class="row">
-    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
-      <h4>Comments</h4>
-      <% @comments.each do |comment| %>
-      <p><%= comment.name %></p>
-      <p><%= comment.body %></p>
-            </div>
-          <% end %>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="visible-xs visible-sm  col-xs-12 col-sm-12">
-        <%= link_to "Write a comment", new_post_comment_path(@post) %>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="visible-xs visible-sm col-xs-12 col-sm-12">
-              <%= @post.ratings.count %> Ratings
-        <% @ratings.each do |rating| %>
-        <div class="star-rating" data-score= <%= rating.rating_number %></div>
-        <p><%= rating.rating_number %></p>
-
-      <% end %>
-
-    </div>
-      <%= link_to "Rate this post", new_post_rating_path(@post) %>
-  </div>
-  
-</div>
-  
-  
-  
-<!---- Large screens ----------->
-  
-<div class="container">
-  
-  <div class="row">
-    <div class="visible-md visible-lg col-md-12 col-lg-12">
-      <h1 class="text-center"><%= @post.title %></h1>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="visible-md visible-lg col-md-12 col-lg-12 text-center">
+  <div class='row'>
+    <div class="col-md-4-offset-6 col-lg-4-offset-6 text-center">
       <%= image_tag @post.image.url(:medium) %>
     </div>
-  </div>
-  
-  <div class="row">
-    <div class="visible-md visible-lg col-md-12 col-lg-12">
-      <p class="lead text-center">Published <%= @post.created_at.strftime('%b %d, %Y') %></p>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="visible-md visible-lg col-md-12 col-lg-12">
-      <p class="lead text-center">Filed under: <% @post.categories.each do |category| %>
-  										<%= link_to category.name, category %>&nbsp;
-  									<% end %>
-      </p>    
-  </div>
-    
-    
-  <div class="row">
-    <div class="visible-md visible-lg col-md-12 col-lg-12">
-      <p class="post_content">
-        <%= @post.content %>
-      </p>
-    </div>
-  </div>
-    
-  <div class="row">
-    <div class="visible-md visible-lg col-md-12 col-lg-12">
-      <h4>Comments</h4>
-      <% @comments.each do |comment| %>
-      <p><%= comment.name %></p>
-      <p><%= comment.body %></p>
-            </div>
-          <% end %>
-    </div>
-  </div>
-    
-  <div class="row">
-    <div class="visible-md visible-lg col-md-12 col-lg-12">
-        <%= link_to "Write a comment", new_post_comment_path(@post) %>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="visible-md visible-lg col-md-12 col-lg-12">
-         <%= @post.ratings.count %> Ratings
-        <% @ratings.each do |rating| %>
-        <div class="star-rating" data-score= <%= rating.rating_number %></div>
-        <p><%= rating.rating_number %></p>
-
-      <% end %>
-
-    </div>
-          <%= link_to "Rate this post", new_post_rating_path(@post) %>
-  </div>
-  
- 
+  </div> 
 </div>
-   
-  <div class="container">
+
+<div class="container-fluid">
+  <div clas="post-wrapper">
+    <div class="row">
+      <div class="col-md-8 col-lg-8">
+        <p class="post_content">
+          <%= @post.content %>
+        </p>
+      </div>
+      <div class="col-md-4 col-lg-4">
+        <div class="blog-sidebar">
+          <p class="well">Sidebar Graphic<p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+       <h4>Comments</h4>
+      <%= @post.comments.count %> Comments
+      <div class="comment-wrapper">
+      <% @comments.each do |comment| %>
+        <p class="cursive">Name:<p/> 
+        <p class="front-text"><%= comment.name %></p>
+        <p class="cursive">Comment:</p> 
+        <p class="front-text"><%= comment.body %></p>
+      </div>
+      <%= link_to "Post a comment", new_post_comment_path(@post) %>
+      </div>
+      
+      <div class="col-md-4 col-lg-4">
+        <h4>Ratings </h4>
+        <%= @post.ratings.count %> Ratings <br />
+        <div class="rating-wrapper">
+        <% @ratings.each do |rating| %>
+    
+          <p class="cursive">Rating: </p> <p class="front-text"> <%= rating.rating_number %> </p>
+        </div>
+          <div class="star-rating" data-score= <% rating.rating_number %> </div>
+          <%= link_to "Rate this post", new_post_rating_path(@post) %> <br />
+
+      </div>
+      <% end %>
+      <% end %>
+</div>
+</div>
+
+  <div class="container-fluid">
   <div class="row">
     
     <% if current_admin != Post.find(params[:id]).admin %>

@@ -23,12 +23,6 @@
 
 body {
   padding:100px;
-
-}
-
-h1 {
-  
-  font-size: 26px;
 }
 
 h2 {
@@ -42,6 +36,14 @@ h3.recent {
   font-size: 32px;
   color: orange;
   text-align: center;
+}
+
+h3.blog-time {
+  font-family: 'Indie Flower', cursive;
+  font-size: 28px;
+  color: orange;
+  text-align: center;
+  border-bottom: 1px solid #B9DB89;
 }
 
 p.front-text {
@@ -70,6 +72,7 @@ p.cursive {
 }
 .navbar-default {
   background-color: #FFEECA;
+  border-bottom: 1px solid #B9DB89;
 }
 
 .navbar-default .navbar-brand {
@@ -112,4 +115,22 @@ p.cursive {
 	border-radius: 5px;
 	margin-bottom: 40px;
 	@include box-shadow;
+}
+
+.post_content {
+  
+}
+
+.blog-sidebar {
+  margin-bottom: 100px;
+  
+  
+}
+
+.comment-wrapper {
+  border: 1px solid #B9DB89;
+}
+
+.rating-wrapper {
+  border: 1px solid #B9DB89;
 }

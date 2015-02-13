@@ -16,7 +16,9 @@
             <% end %>
           </div> <!--- image wrapper ---->
             <h2> <%= link_to post.title, post %> </h2>
-
+                <h4>
+                Tag: <%= post.categories.map { |category| link_to category.name, category_path(category.id)}.join(', ').html_safe %> 
+                </h4>
         </div> <!---- post ----->
       </div> <!---- col-md-4 ---->
             <% end %>
