@@ -42,33 +42,25 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-4 col-lg-4">
-       <h4>Comments</h4>
-      <%= @post.comments.count %> Comments
-      <div class="comment-wrapper">
-      <% @comments.each do |comment| %>
-        <p class="cursive">Name:<p/> 
-        <p class="front-text"><%= comment.name %></p>
-        <p class="cursive">Comment:</p> 
-        <p class="front-text"><%= comment.body %></p>
-      </div>
-      <%= link_to "Post a comment", new_post_comment_path(@post) %>
-      </div>
-      
-      <div class="col-md-4 col-lg-4">
-        <h4>Ratings </h4>
-        <%= @post.ratings.count %> Ratings <br />
-        <div class="rating-wrapper">
-        <% @ratings.each do |rating| %>
-    
-          <p class="cursive">Rating: </p> <p class="front-text"> <%= rating.rating_number %> </p>
-        </div>
-          <div class="star-rating" data-score= <% rating.rating_number %> </div>
-          <%= link_to "Rate this post", new_post_rating_path(@post) %> <br />
+         <h4>Comments</h4>
+          <%= @post.comments.count %> Comments
+            <div class="comment-wrapper">
+              <% @comments.each do |comment| %>
+                <p class="cursive">Name:<p/> 
+                <p class="front-text"><%= comment.name %></p>
+                <p class="cursive">Comment:</p> 
+                <p class="front-text"><%= comment.body %></p>
 
+              <% end %>
+            </div>
+    </div>
+      
+
+  <div class="row">
+  <div class="col-md-4 col-lg-4">
+    <%= link_to "Post a comment", new_post_comment_path(@post) %> <br />
+  </div>
       </div>
-      <% end %>
-      <% end %>
-</div>
 </div>
 
   <div class="container-fluid">

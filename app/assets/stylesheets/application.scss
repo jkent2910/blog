@@ -25,6 +25,21 @@ body {
   padding:100px;
 }
 
+p#short {
+  display:none;
+}
+
+p#long {
+  display:none;
+}
+
+h2.heading {
+  font-family: 'Indie Flower', cursive;
+  font-size: 48px;
+  color: orange;
+  text-align: center;
+}
+
 h2 {
   font-family: 'Oxygen', sans-serif;
   font-size: 24px;
@@ -45,7 +60,6 @@ h3.blog-time {
   text-align: center;
   border-bottom: 1px solid #B9DB89;
 }
-
 p.front-text {
   font-family: 'Oxygen', sans-serif;
   padding-top: 10px;
