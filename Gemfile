@@ -30,4 +30,5 @@ gem 'devise'
 
 gem 'paperclip', '~> 4.2.0'
 
+gem 'tinymce-rails'
 

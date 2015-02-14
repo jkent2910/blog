@@ -1,4 +1,4 @@
-
+ <%= tinymce %>
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-lg-12">
@@ -27,7 +27,7 @@
     <div class="row">
       <div class="col-md-8 col-lg-8">
         <p class="post_content">
-          <%= @post.content %>
+          <%= @post.content.html_safe %>
         </p>
       </div>
       <div class="col-md-4 col-lg-4">
@@ -54,18 +54,11 @@
               <% end %>
             </div>
     </div>
-      
-
-  <div class="row">
-  <div class="col-md-4 col-lg-4">
-    <%= link_to "Post a comment", new_post_comment_path(@post) %> <br />
-  </div>
-      </div>
 </div>
 
   <div class="container-fluid">
   <div class="row">
-    
+     <%= link_to "Add a comment", new_post_comment_path(@post) %> <br />
     <% if current_admin != Post.find(params[:id]).admin %>
       <%= link_to "Back", posts_path, class: "btn btn-primary" %>
     <% else %>

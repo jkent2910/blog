@@ -1,0 +1,145 @@
+@mixin box-shadow {
+	-webkit-box-shadow: rgba(142, 214, 172, 0.09) 0 2px 0;
+	-moz-box-shadow: rgba(142, 214, 172, 0.09) 0 2px 0;
+	box-shadow: rgba(142, 214, 172, 0.09) 0 2px 0;
+}
+
+body {
+  padding:100px;
+}
+
+p#short {
+  display:none;
+}
+
+p#long {
+  display:none;
+}
+
+h2.heading {
+  font-family: 'Indie Flower', cursive;
+  font-size: 48px;
+  color: orange;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+h2#story {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 22px;
+  color: orange;
+  text-align: center;
+  border-bottom: 1px solid #B9DB89;
+}
+
+h3.recent {
+  font-family: 'Indie Flower', cursive;
+  font-size: 32px;
+  color: orange;
+  text-align: center;
+}
+
+h3.blog-time {
+  font-family: 'Indie Flower', cursive;
+  font-size: 28px;
+  color: orange;
+  text-align: center;
+  border-bottom: 1px solid #B9DB89;
+}
+
+p.front-text {
+  font-family: 'Oxygen', sans-serif;
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+p.strong-cursive {
+  font-family: 'Indie Flower', cursive;
+  font-size: 32px;
+  color: orange;
+  white-space: nowrap;
+}
+
+p.cursive {
+  font-family: 'Indie Flower', cursive;
+  font-size: 24px;
+  color: orange;
+  white-space: nowrap;
+}
+
+.navbar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-default {
+  background-color: #FFEECA;
+  border-bottom: 1px solid #B9DB89;
+}
+
+.navbar-default .navbar-brand {
+  color: #23429D;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #23429D;
+  font-family: 'Bitter', serif;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  text-decoration: underline;
+  color: #23429D;
+}
+
+.image_wrapper {
+		max-width: 100%;
+		border-radius: 5px 5px 0 0;
+		overflow: hidden;
+	}
+	.blog_img {
+		width: 100%;
+		-webkit-transition: all .3s ease-out;
+	  -moz-transition: all .3s ease-out;
+	  -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+		&:hover {
+			transform: scale(1.075);
+		}
+  }
+
+.graphic-wrap {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.post {
+	background: white;
+	border-radius: 5px;
+	margin-bottom: 40px;
+	@include box-shadow;
+}
+
+.blog-sidebar {
+  margin-bottom: 100px;
+}
+
+.comment-wrapper {
+  border: 1px solid #B9DB89;
+}
+
+.rating-wrapper {
+  border: 1px solid #B9DB89;
+}
+
+.blog-footer {
+padding: 40px 0;
+color: #999;
+text-align: center;
+background-color: #f9f9f9;
+border-top: 1px solid #e5e5e5;
+}
