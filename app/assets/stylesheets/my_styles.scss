@@ -1,3 +1,9 @@
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased
+ }
+
 @mixin box-shadow {
 	-webkit-box-shadow: rgba(142, 214, 172, 0.09) 0 2px 0;
 	-moz-box-shadow: rgba(142, 214, 172, 0.09) 0 2px 0;
@@ -6,6 +12,65 @@
 
 body {
   padding:100px;
+}
+
+a.footer_bottom{
+  font-family: 'Comfortaa', cursive;
+  color: #FFFFFF;
+  a.footer_bottom:hover {
+    color: #FFFFFF;
+  }
+}
+
+h1.main_header {
+  font-family: 'Comfortaa', cursive;
+	font-weight: 700;
+  letter-spacing: 2px;
+  color: #6961FF;
+}
+
+h3.main_subheader {
+  font-family: 'Comfortaa', cursive;
+  font-size: 36px;
+  color: #6961FF;
+}
+
+h3.main_posts {
+  font-family: 'Comfortaa', cursive;
+  font-size: 32px;
+  color: #056E00;
+  text-align: center;
+}
+
+h3.thanks {
+  font-family: 'Comfortaa', cursive;
+  font-size: 32px;
+  color: #6961FF;
+  text-align: center;
+}
+
+p.strong-cursive {
+  font-family: 'Indie Flower', cursive;
+  font-size: 48px;
+  color: #FF0054;
+  text-align: center;
+}
+
+img.name_banner {
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-image: url("background_skin.png");
+  margin-bottom: 50px;
+}
+
+.post {
+	background: white;
+	border-radius: 5px;
+	margin-bottom: 40px;
+	@include box-shadow;
+  font-family: 'Comfortaa', cursive;
+  color: #FF0054;
 }
 
 p#short {
@@ -56,20 +121,8 @@ p.front-text {
   font-family: 'Oxygen', sans-serif;
   padding-top: 10px;
   font-size: 16px;
-}
-
-p.strong-cursive {
-  font-family: 'Indie Flower', cursive;
-  font-size: 32px;
-  color: orange;
-  white-space: nowrap;
-}
-
-p.cursive {
-  font-family: 'Indie Flower', cursive;
-  font-size: 24px;
-  color: orange;
-  white-space: nowrap;
+  line-height: 150%;
+  letter-spacing: 1.25px;
 }
 
 .navbar {
@@ -78,22 +131,22 @@ p.cursive {
 }
 
 .navbar-default {
-  background-color: #FFEECA;
+  background-color: #6961FF !important;
   border-bottom: 1px solid #B9DB89;
 }
 
 .navbar-default .navbar-brand {
-  color: #23429D;
+  color: #FFFFFF !important;
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: #23429D;
-  font-family: 'Bitter', serif;
+  color: #FFFFFF !important;
+  font-family: 'Oxygen', sans-serif;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
   text-decoration: underline;
-  color: #23429D;
+  color: #FFFFFF !important;
 }
 
 .image_wrapper {
@@ -113,15 +166,15 @@ p.cursive {
   }
 
 .graphic-wrap {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.post {
-	background: white;
-	border-radius: 5px;
-	margin-bottom: 40px;
-	@include box-shadow;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border: 2px solid #FF0054;
+  border-radius: 25px;
+  background-image: url("background_skin.png");
 }
 
 .blog-sidebar {
@@ -138,8 +191,20 @@ p.cursive {
 
 .blog-footer {
 padding: 40px 0;
-color: #999;
 text-align: center;
-background-color: #f9f9f9;
+background-color: #6961FF !important;
+border-bottom: 1px solid #B9DB89;
 border-top: 1px solid #e5e5e5;
+font-family: 'Comfortaa', cursive;
+color: #FFFFFF;
+}
+
+.mini_course {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.bottom_front {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
