@@ -2,13 +2,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-lg-12">
-      <h3 class="recent">
+      <h3 class="main_posts">
         <%= @post.title %>
       </h3>
     </div>
     <div class="row">
     <div class="col-md-12 col-lg-12">
-      <h3 class="blog-time">
+      <h3 class="idea">
         <%= @post.created_at.strftime('%b %d, %Y') %>
       </h3>
     </div>
@@ -29,28 +29,29 @@
         <p class="post_content">
           <%= @post.content.html_safe %>
         </p>
+        <h4 class="comment_header"> Thanks for reading!</h4>
+        <p class="signature"> Julie </p>
       </div>
       <div class="col-md-4 col-lg-4">
         <div class="blog-sidebar">
-          <p class="well">Sidebar Graphic<p>
+          <%= link_to image_tag("sidebar_mini.png", :alt => "sidebar_minicourse", :class => "mini_course_sidebar"), "/course" %>
+          <%= link_to image_tag("signup.png", :alt => "signup", :class => "mini_course_sidebar"), "mailto:jkent2910@gmail.com" %>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid comments">
     <div class="row">
       <div class="col-md-4 col-lg-4">
-         <h4>Comments</h4>
-          <%= @post.comments.count %> Comments
+         <h4 class="comment_header">Comments</h4>
+        <p class="p_normal"> <%= @post.comments.count %> Comments</p>
             <div class="comment-wrapper">
               <% @comments.each do |comment| %>
-                <p class="cursive">Name:<p/> 
-                <p class="front-text"><%= comment.name %></p>
-                <p class="cursive">Comment:</p> 
-                <p class="front-text"><%= comment.body %></p>
-
+                <p class="p_heading">Name:<p/>  <p class="p_normal"><%= comment.name %></p>
+                <p class="p_heading">Comment:</p> 
+                <p class="p_normal"><%= comment.body %></p>
               <% end %>
             </div>
     </div>
@@ -58,7 +59,7 @@
 
   <div class="container-fluid">
   <div class="row">
-     <%= link_to "Add a comment", new_post_comment_path(@post) %> <br />
+    <h4 class="comment_header"><%= link_to "Add a comment", new_post_comment_path(@post) %></h4><br />
     <% if current_admin != Post.find(params[:id]).admin %>
       <%= link_to "Back", posts_path, class: "btn btn-primary" %>
     <% else %>

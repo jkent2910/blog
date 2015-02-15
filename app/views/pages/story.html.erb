@@ -1,9 +1,16 @@
 <div class="container">
+  <h2 class="heading">My story </h2>
+<h2 id="story"> Regardless of whether or not you choose to read the very long or not quite as long version, both include a lot of personal details about my past.  I decided to share these things to make this blog real.  So often I read blogs about personal finance (or whatever topic) and it's hard to really "connect" with the writer.  I don't want this blog to be that way.  I hope that by telling my story and background that readers can relate and feel like they're reading a friend's blog instead of a person they've never met.  </h2><br /><br />
+  <div class='row'>
+    <div class="col-md-4-offset-6 col-lg-4-offset-6 text-center photo_me">  
+      <%= image_tag("me_roadie.jpg", :alt => "Me", :class => "img-circle") %>
+    </div>
+  </div> 
 
-<h2 id="story"> Regardless of whether or not you choose to read the very long or long version, both include a lot of personal details about my past.  I decided to share these things to make this blog real.  So often I read blogs about personal finance (or whatever topic) and it's hard to really "connect" with the writer.  I don't want this blog to be that way.  I hope that by telling my story and background that readers can relate and feel like they're reading a friend's blog instead of a person they've (maybe) never met.  </h2><br /><br />
-<div class="row text-center">
-<button id="btn_short" class="btn btn-default">The Short Version</button>
-<button id="btn_long" class="btn btn-primary">The Long Version</button>
+  </div>
+<div class="row text-center row_space">
+<button id="btn_short" class="btn btn-default btn_story">The Short Version</button>
+<button id="btn_long" class="btn btn-primary btn_story">The Long Version</button>
 </div>
 <p id="short">
 I am currently 26 years old <br /><br />
@@ -37,9 +44,9 @@ I grew up in a middle-class suburban family where jocks ruled the school and ban
 
 Have you ever tried to recall your past as if you were in one of those dreams where you are having an out of body experience?  I think about my days in middle and high school like that a lot.  Like I'm observing myself at 13 or 14 with my 26 year old mind.  It's hard to reconcile.  Who WAS that person?!  <br /><br/>
 
-Most people are shocked to hear that after my freshman year of high school, I touted a 1.9 GPA including a D in English for plagiarizing a paper because I refused to watch West Side Story.  By that time I had dabbled a bit with alcohol (mainly Five O' Clock vodka or Smirnoff Ice... classy stuff), took a puff of what was claimed to be weed, although it could have very well been Oregano, and tried to get high from huffing paints and other crap like that.  See what I mean why I say it's hard to reconcile?  Now I rarely drink, and have hypochondria so bad that I would never touch an illegal drug.<br /><br/>
+Most people are shocked to hear that after my freshman year of high school, I touted a 1.9 GPA including a D in English for plagiarizing a paper because I refused to watch West Side Story.  By that time I had dabbled a bit with alcohol (mainly Five O' Clock vodka or Smirnoff Ice... classy stuff), took a puff of what was claimed to be weed, although it could have very well been Oregano, and tried to get high from huffing paints and other crap like that.  See what I mean when I say it's hard to reconcile?  Now I rarely drink, and have hypochondria so bad that I would never touch an illegal drug.<br /><br/>
 
-I don't really have an excuse as to why I would use drugs or alcohol.  My parents were good parents.  I was provided for.  When I do try to come up with some intelligent reason for my destructive and stupid behavior, I can only really point to the fact that I needed challenge in my life.  My brain needs to be stimulated, or I just get bored and frustrated.  I remember in grade school my Mom would always tell me "3rd grade is SO much harder than 2nd" or whatever the next grade was.  I think by the time I got to 7th grade, I realized I wasn't learning anything, I just threw in the towel and decided to do nothing.  Which led to depression.  I went through probably a good year of cutting myself.  My parents tried to make me go to counseling, but I would just sit on the couch silently so it never really did any good.  <br /><br/>
+I don't really have an excuse as to why I used drugs or alcohol.  My parents were good parents.  I was provided for.  When I do try to come up with an intelligent reason for my destructive and stupid behavior, I can only really point to the fact that I needed challenge in my life.  My brain needs to be stimulated, or I just get bored and frustrated.  I remember in grade school my Mom would always tell me "3rd grade is SO much harder than 2nd" or whatever the next grade was.  I think by the time I got to 7th grade, I realized I wasn't learning anything, so I just threw in the towel and decided to do nothing.  Which led to depression.  I went through probably a good year of cutting myself.  My parents tried to make me go to counseling, but I would just sit on the couch silently so it never really did any good.  <br /><br/>
 
 In 10th grade I was a victim of sexual abuse.  I don't want to go into specifics, but it was a complicated moment of my life that I'm still dealing with today.  If there ever was a pivotal moment in my life, that was it.  I guess I just decided it was time to do better.  To focus.  Make something of myself so I could leave and get away from everything.  I was lucky enough to have a teacher that took me under his wing and made me reach potential that I didn't even know I was capable of.  I'd tell him that I was horrible in math.  He'd tell me he didn't believe me.  I'd get a bad grade on a test.  He'd call me out and ask me why.  I couldn't give the excuse of I wasn't smart enough.  He wouldn't let me.  <br /><br/>
 
@@ -112,6 +119,10 @@ So there you have it.  My story up until now.  I hope that you enjoy my blog and
 Please feel free to e-mail me - I would love to hear from you!  And please interact with my blog posts as I will read and respond to all comments!  :)  <br /> </p>
 </div>
 
+
+
+        <h4 class="comment_header"> Thanks for reading!</h4>
+        <p class="signature"> Julie </p>
 <script>
 $(function() {
     $('#btn_long').click(function(e) {

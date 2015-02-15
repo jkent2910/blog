@@ -49,11 +49,31 @@ h3.thanks {
   text-align: center;
 }
 
+h3.idea {
+  font-family: 'Comfortaa', cursive;
+  font-size: 32px;
+  color: #FF0054;
+  text-align: center;
+}
+
+h5.small_heading {
+  font-family: 'Comfortaa', cursive;
+  font-size: 18px;
+  color: #056E00;
+  text-align: center;
+}
+
 p.strong-cursive {
   font-family: 'Indie Flower', cursive;
   font-size: 48px;
   color: #FF0054;
   text-align: center;
+}
+
+p.signature {
+  font-family: 'Indie Flower', cursive;
+  font-size: 48px;
+  color: #FF0054;
 }
 
 img.name_banner {
@@ -82,9 +102,9 @@ p#long {
 }
 
 h2.heading {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Comfortaa', cursive;
   font-size: 48px;
-  color: orange;
+  color: #6961FF;
   text-align: center;
 }
 
@@ -97,9 +117,28 @@ h2 {
 h2#story {
   font-family: 'Oxygen', sans-serif;
   font-size: 22px;
-  color: orange;
+  color: #FF0054;
   text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 125%;
   border-bottom: 1px solid #B9DB89;
+  margin-bottom: 25px;
+}
+
+p.small-text {
+  font-family: 'Comfortaa', cursive;
+  font-size: 14px;
+  padding: 20px;
+  color: #6961FF;
+  float: right;
+}
+
+img.img-center {
+  vertical-align: middle;
+}
+
+.img-for-small {
+  float: left;
 }
 
 h3.recent {
@@ -182,7 +221,9 @@ p.front-text {
 }
 
 .comment-wrapper {
-  border: 1px solid #B9DB89;
+  border: 1px solid #056E00;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .rating-wrapper {
@@ -207,4 +248,42 @@ color: #FFFFFF;
 .bottom_front {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.photo_me {
+  margin-bottom: 50px;
+}
+
+.row_space {
+  margin-bottom: 50px;
+}
+
+.mini_course_sidebar {
+  border: 2px solid #FF0054;
+  border-radius: 25px;
+  margin-bottom: 10px;
+}
+
+.comments {
+  margin-top: 50px;
+}
+
+.comment_header {
+  color: #6961FF !important;
+  font-family: 'Oxygen', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.p_normal {
+  color: #FF0054 !important;
+  font-family: 'Oxygen', sans-serif;
+  letter-spacing: 2px;
+}
+
+.p_heading {
+  color: #FF0054 !important;
+  font-family: 'Oxygen', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 900;
 }
