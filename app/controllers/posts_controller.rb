@@ -5,8 +5,7 @@
      before_action :ensure_post_ownership, only: [:edit, :update, :destroy]
    
    def index
-     
-     @posts = Post.order(updated_at: :desc).limit(25)
+     @posts = Post.order(updated_at: :desc).limit(10);
    end
 
    def show
