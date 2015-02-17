@@ -62,7 +62,7 @@
   <div class="container-fluid">
   <div class="row">
     <h4 class="comment_header"><%= link_to "Add a comment", new_post_comment_path(@post) %></h4><br />
-    <% if current_admin != Post.find(params[:id]).admin %>
+    <% if current_admin != Post.friendly.find(params[:id]).admin %>
       <%= link_to "Back", posts_path, class: "btn btn-primary" %>
     <% else %>
       <%= link_to "Back", posts_path, class: "btn btn-primary" %>

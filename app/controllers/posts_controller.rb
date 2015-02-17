@@ -15,7 +15,7 @@
 
    def show
      
-     @post = Post.find(params[:id])
+     @post = Post.friendly.find(params[:id])
      
      @comments = Comment.where(post_id: @post.id).order("created_at DESC")
      
@@ -46,11 +46,11 @@
    end
    
  	def edit
-		@post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
 	end
 
 	def update
-		@post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
 
     if @post.update(params[:post].permit(:title, :content, :image, :category_ids => []))
 			redirect_to @post
@@ -60,7 +60,7 @@
 	end
    
 	def destroy
-		@post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
 		@post.destroy
 
 		redirect_to posts_path
@@ -74,7 +74,7 @@
    end
 
   def ensure_post_ownership
-    if current_admin != Post.find(params[:id]).admin
+    if current_admin != Post.friendly.find(params[:id]).admin
       redirect_to root_path, "You do not have access to do perform that action"
     end
   end

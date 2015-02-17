@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
-
+  extend FriendlyId
+  friendly_id :title, :use => :slugged
   belongs_to :admin
   has_many :post_categories
   has_many :categories, through: :post_categories
@@ -12,7 +13,7 @@ class Post < ActiveRecord::Base
       :medium => "200x200" }
 
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-  validates :title, :content, :categories, presence: true 
+  validates :title, :content, :categories, :slug, presence: true 
 
 
     
