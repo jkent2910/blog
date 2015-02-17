@@ -49,6 +49,13 @@ h3.thanks {
   text-align: center;
 }
 
+h2.post_title {
+  font-family: 'Comfortaa', cursive;
+  font-size: 18px;
+  color: #056E00;
+  text-align: center;
+}
+
 h3.idea {
   font-family: 'Comfortaa', cursive;
   font-size: 32px;
@@ -138,9 +145,13 @@ img.img-center {
 }
 
 .img-for-small {
-  float: left;
+  position: relative;
+  left: -150px;
 }
 
+.front_small {
+  padding: 75px;
+}
 h3.recent {
   font-family: 'Indie Flower', cursive;
   font-size: 32px;
@@ -286,4 +297,19 @@ color: #FFFFFF;
   font-family: 'Oxygen', sans-serif;
   letter-spacing: 2px;
   font-weight: 900;
+}
+
+
+@media only screen and (max-width: 750px) {
+  h1.main_header, h3.main_subheader, h3.thanks, p.strong-cursive, h3.main_posts, h2.post_title {
+    font-size: 1.2em;
+  }
+  
+  p.front-text {
+    font-size: 1em;
+  }
+  
+  body {
+    padding: 0;
+  }
 }

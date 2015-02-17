@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="visible-md visible-lg container-fluid">
   <div class="row">
     <div class="visible-md visible-lg col-md-12 col-lg-12">
       <%= image_tag("name_banner.png", :alt => "Hi I'm Julie", :class => "name_banner") %>
@@ -8,11 +8,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="visible-md visible-lg col-md-4 col-lg-4">
-      <%= image_tag("me and troy.jpg", :alt => "Me", :class => "img-circle img-responsive img-story") %>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <%= image_tag("me and troy.jpg", :alt => "Me", :class => "img-circle img-responsive") %>
     </div>
 
-    <div class="visible-md visible-lg col-md-8 offset-4 col-lg-8 offset-4">
+    <div class="col-xs-12 col-sm-12 col-md-8 offset-4 col-lg-8 offset-4 header">
         <h1 class="main_header">I'm a 20-something on a quest to live: <h1/>
         <h3 class="main_subheader">happy, healthy, and wealthy </h3>
         <p class="front-text"> 
@@ -55,21 +55,21 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+    <div class="col-sm-12 col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
       <h3 class="main_posts">Recent Posts</h3>
     </div>
   </div>
   <% @posts.each_slice(3).each do |posts| %>
   <div class="row">
       <% posts.each do |post| %>
-      <div class="col-md-4 col-lg-4">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <div class="post">
           <div class="img_wrapper">
             <%= link_to post do %>
             <%= image_tag post.image.url(:medium), :class => "blog_img" %> 
             <% end %>
           </div> <!--- image wrapper ---->
-            <h2> <%= link_to post.title, post %> </h2>
+            <h2 class="post_title"> <%= link_to post.title, post %> </h2>
 
         </div> <!---- post ----->
       </div> <!---- col-md-4 ---->
@@ -81,10 +81,13 @@
 
 <div class="container-fluid mini_course">
     <div class="row">
-      <div class="col-md-6 col-lg-6">
+      <div class="visible-md visible-lg col-md-6 col-lg-6">
         <div class="graphic-wrap">
           <%= image_tag("5_week.png", :alt => "Mini-Course", :class => "img-responsive") %>
         </div>
+      </div>
+      <div class="visible-sm visible-xs col-sm-12 col-xs-12">
+          <%= image_tag("mini-course-small.png", :alt => "Mini-Course", :class => "img-responsive") %>
       </div>
 
       <div class="col-md-6 col-lg-6">
@@ -96,10 +99,18 @@
 
 <div class="container-fluid bottom_front">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+      <div class="visible-md visible-lg col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
         <div class="graphic-wrap">
-        <%=link_to image_tag("contact.png", :alt => "Mini-Course", :class => "img-responsive"), "mailto: jkent2910@gmail.com" %>
+        <%=link_to image_tag("contact.png", :alt => "Contact", :class => "img-responsive"), "mailto: jkent2910@gmail.com" %>
         </div>
       </div>
+      <div class="visible-sm visible-xs col-sm-12 col-xs-12">
+        <div class="graphic-wrap">
+        <%=link_to image_tag("touch-small.png", :alt => "Contact", :class => "img-responsive"), "mailto: jkent2910@gmail.com" %>
+        </div>
+      </div>
+      
+      
     </div>
 </div>
+ 
