@@ -34,6 +34,14 @@
   margin-right: auto; 
   }
   
+#mc_embed_signup input.email {
+  margin-left: 80px;
+}
+  
+  #mc_embed_signup input.button {
+    margin-left: 115px;
+  }
+  
 	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
@@ -85,11 +93,11 @@
     <div class="row">
       <div class="visible-md visible-lg col-md-6 col-lg-6">
         <div class="graphic-wrap">
-          <%= image_tag("5_week.png", :alt => "Mini-Course", :class => "img-responsive") %>
+          <%= link_to image_tag("5_week.png", :alt => "Mini-Course", :class => "img-responsive"), "/course" %>
         </div>
       </div>
       <div class="visible-sm visible-xs col-sm-12 col-xs-12">
-          <%= image_tag("mini-course-small.png", :alt => "Mini-Course", :class => "img-responsive") %>
+          <%= link_to image_tag("mini-course-small.png", :alt => "Mini-Course", :class => "img-responsive"), "/course" %>
       </div>
 
       <div class="col-md-6 col-lg-6">
