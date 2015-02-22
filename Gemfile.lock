@@ -120,6 +120,9 @@ GEM
       activemodel (~> 4.0)
     sitemap_generator (5.0.5)
       builder
+    social-share-button (0.1.8)
+      coffee-rails
+      sass-rails
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -164,6 +167,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   simple_form (~> 3.1.0)
   sitemap_generator
+  social-share-button
   spring
   tinymce-rails
   turbolinks

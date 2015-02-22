@@ -23,6 +23,21 @@
       <%= image_tag @post.image.url(:medium) %>
     </div>
   </div> 
+  <div class="row">
+    <div class="col-md-4-offset-6 col-lg-4-offset-6 text-center">
+    <h4 class="comment_header">
+      Tag: <%= @post.categories.map { |category| link_to category.name, category_path(category.id)}.join(', ').html_safe %> 
+    </h4>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4-offset-6 col-lg-4-offset-6 text-center">
+    <h4 class="comment_header">
+        Spread the word! <%= social_share_button_tag(@post.title) %>
+    </h4>
+    </div>
+  </div>
   
 
 </div>
@@ -98,12 +113,3 @@
     scoreName: 'rating[rating_number]'
   });
 </script>
-<script>
-  new Share(".share", {
-  networks: {
-    facebook: {
-      app_id: "abc123"
-    }
-  }
-});
-  </script>

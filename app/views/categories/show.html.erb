@@ -1,9 +1,10 @@
-<h1><%= @category.name %> Posts</h1>
-<h3>There are <%= @category.posts.count %> posts filed under <%= @category.name %></h3>
+<h2 class="heading"><%= @category.name %> Posts</h2>
+<h3 class="idea">There are <%= @category.posts.count %> posts filed under <%= @category.name %></h3>
 <ul>
 	<% @category.posts.order(:title).each do |post| %>
-		<h4>
+		<h1 class="course">
+      <%= image_tag post.image.url(:thumb) %> 
 	  	<%= link_to post.title, post %>
-	  </h4>
+	  </h1>
 	<% end %>
 </ul>

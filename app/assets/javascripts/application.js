@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require tinymce-jquery
+//= require social-share-button
 //= require_tree .
