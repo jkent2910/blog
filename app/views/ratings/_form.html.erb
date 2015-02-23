@@ -6,15 +6,6 @@
 <% end %>
 
 
-<script>
-    $('.star-rating').raty({
-      path: '/assets/',
-      readOnly: true,
-      score: function() {
-            return $(this).attr('data-score');
-    }
-  });
-</script>
 
 <script>
   $('#star-rating').raty({
@@ -22,3 +13,4 @@
     scoreName: 'rating[rating_number]'
   });
 </script>
+

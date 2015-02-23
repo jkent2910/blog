@@ -7,6 +7,9 @@ class RatingsController < ApplicationController
   def new
     @rating = Rating.new
   end
+  
+  def edit
+  end
  
   def create
     @rating = Rating.new(rating_params)
@@ -19,11 +22,7 @@ class RatingsController < ApplicationController
     end 
   end
   
-  def show
-  end
-  
-  def edit
-  end
+
   
   def update
     @rating.update(rating_params)

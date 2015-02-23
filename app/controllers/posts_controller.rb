@@ -65,7 +65,7 @@
   private
    
    def post_params
-     params.require(:post).permit(:title, :content, :image, :category_ids => [])
+     params.require(:post).permit(:title, :content, :image, :rating, :category_ids => [])
    end
 
   def ensure_post_ownership

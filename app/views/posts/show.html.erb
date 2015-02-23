@@ -66,6 +66,23 @@
     </div>
   </div>
 </div>
+<!---- not working yet 
+<div class="container-fluid">
+    <div class="row">
+    <h4 class="comment_header"><%= link_to "Add a rating", new_post_rating_path(@post) %></h4><br />
+</div>  ------>
+
+ <!--- not working yet         <% if @ratings.blank? %>
+          <h3>No ratings just yet, would you like to add the first!</h3>
+              <%= link_to "Rate this article", new_post_rating_path(@post), class: "btn btn-danger" %>
+        <% else %>
+          <% @ratings.each do |rating| %>
+            <div class="ratings">
+              <div class="star-rating" data-score= <%= rating.rating_number %> ></div>
+            </div>
+          <% end %>
+        <% end %>  ------>
+
 
 <div class="container-fluid comments">
     <div class="row">
@@ -80,6 +97,7 @@
               <% end %>
             </div>
     </div>
+      
 </div>
 
   <div class="container-fluid">
@@ -107,9 +125,3 @@
   });
 </script>
 
-<script>
-  $('#star-rating').raty({
-    path: '/assets/',
-    scoreName: 'rating[rating_number]'
-  });
-</script>
