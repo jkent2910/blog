@@ -45,3 +45,5 @@ gem 'social-share-button'
 gem 'aws-sdk'
 
 gem 'figaro'
+
+gem 'rails_12factor'
