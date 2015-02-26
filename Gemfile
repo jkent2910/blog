@@ -41,3 +41,5 @@ gem 'sitemap_generator'
 gem 'metamagic'
 
 gem 'social-share-button'
+
+gem 'aws-sdk'
