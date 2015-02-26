@@ -80,8 +80,8 @@ Rails.application.configure do
   :storage => :s3,
   :s3_credentials => {
     :bucket => ENV['happyhealthywealthy-assets'],
-    :access_key_id => ENV['AKIAICWMWZQV64O5J6AA'],
-    :secret_access_key => ENV['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']
+    :access_key_id => ENV['aws_access_key_id'],
+    :secret_access_key => ENV['aws_secret_access_key_id']
   }
 }
 end

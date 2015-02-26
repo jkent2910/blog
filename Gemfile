@@ -43,3 +43,5 @@ gem 'metamagic'
 gem 'social-share-button'
 
 gem 'aws-sdk'
+
+gem 'figaro'
