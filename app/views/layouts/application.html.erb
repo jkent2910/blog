@@ -41,9 +41,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     
       <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+        <% if admin_signed_in? %>
+            <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
             <li><a href="/posts">Blog</a></li>
             <li><a href="/course">Free Mini-Course</a></li>
             <li><a href="/story">My Story</a></li>
+        <% else %>
+            <li><a href="/posts">Blog</a></li>
+            <li><a href="/course">Free Mini-Course</a></li>
+            <li><a href="/story">My Story</a></li>
+        <% end %>
       </ul>
     
     
