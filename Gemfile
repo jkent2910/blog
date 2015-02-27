@@ -44,6 +44,6 @@ gem 'social-share-button'
 
 gem 'aws-sdk'
 
-gem 'figaro'
+gem 'figaro', :groups => [:development, :production]
 
 gem 'rails_12factor'
