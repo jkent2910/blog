@@ -11,7 +11,7 @@
    def show
      
      @post = Post.friendly.find(params[:id])
-     @category = Category.find(params[:id])
+
      @posts = Post.order(updated_at: :desc).limit(3);
      
      

@@ -58,20 +58,7 @@
     </div>
 
   </div>
-        <h4 class="comment_header"> Thanks for reading!</h4>
-        <p class="signature"> Julie </p>
-        <h5 class="enjoy_heading"> You might also enjoy </h5> 
-        
-    <h4 class="comment_header">
-	  <% @category.posts.order(:title).each do |post| %>
-		  <h4 class="similar_posts">
-	  	  <%= link_to post.title, post %>
-	    </h4>
-	<% end %>
-    </h4>
-        
-        
-        
+
         
         
         
