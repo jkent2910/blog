@@ -84,4 +84,6 @@ Rails.application.configure do
     :secret_access_key => ENV["aws_secret_access_key_id"]
   }
 }
+  
+  GA.tracker = "UA-58060808-3"
 end

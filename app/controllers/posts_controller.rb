@@ -3,7 +3,7 @@
      before_action :authenticate_admin!, except: [:index, :show]
    
      before_action :ensure_post_ownership, only: [:edit, :update, :destroy]
-   
+
    def index
      @posts = Post.order(updated_at: :desc).limit(10);
    end
@@ -12,9 +12,7 @@
      
      @post = Post.friendly.find(params[:id])
 
-     @posts = Post.order(updated_at: :desc).limit(3);
-     
-     
+
      @comments = Comment.where(post_id: @post.id).order("created_at DESC")
      
      
@@ -76,5 +74,6 @@
       redirect_to root_path, "You do not have access to do perform that action"
     end
   end
+  
     
  end

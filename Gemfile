@@ -47,3 +47,10 @@ gem 'aws-sdk'
 gem 'figaro', :groups => [:development, :production]
 
 gem 'rails_12factor'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'byebug', '~> 3.5.1'
+end 
+
+gem 'google-analytics-rails'
