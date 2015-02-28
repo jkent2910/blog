@@ -60,7 +60,27 @@
   </div>
         <h4 class="comment_header"> Thanks for reading!</h4>
         <p class="signature"> Julie </p>
-      </div>
+        <h5 class="enjoy_heading"> You might also enjoy </h5> 
+        
+    <h4 class="comment_header">
+	  <% @category.posts.order(:title).each do |post| %>
+		  <h4 class="similar_posts">
+	  	  <%= link_to post.title, post %>
+	    </h4>
+	<% end %>
+    </h4>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </div>
       <div class="col-md-4 col-lg-4">
         <div class="blog-sidebar">
           <%= link_to image_tag("sidebar_mini.png", :alt => "sidebar_minicourse", :class => "mini_course_sidebar"), "/course" %>

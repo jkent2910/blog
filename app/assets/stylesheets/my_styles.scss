@@ -64,6 +64,14 @@ h1.course {
   text-align: center;
 }
 
+h4.similar_posts {
+  font-family: 'Comfortaa', cursive;
+  font-size: 16px;
+  font-weight: 700;
+  color: #6961FF;
+  text-align: center;
+}
+
 h1.big {
   font-family: 'Comfortaa', cursive;
   font-size: 48px;
@@ -85,6 +93,14 @@ h5.small_heading {
   color: #056E00;
   text-align: center;
 }
+
+h5.enjoy_heading {
+  font-family: 'Comfortaa', cursive;
+  font-size: 18px;
+  color: #056E00;
+  text-align: center;
+}
+
 
 p.strong-cursive {
   font-family: 'Indie Flower', cursive;
@@ -305,6 +321,7 @@ color: #FFFFFF;
   font-weight: 700;
 }
 
+
 .p_normal {
   color: #FF0054 !important;
   font-family: 'Oxygen', sans-serif;
@@ -344,6 +361,10 @@ color: #FFFFFF;
   
   body {
     padding: 0;
+  }
+  
+  .my_picture {
+    margin-top: 75px;
   }
   
   .small_screen {

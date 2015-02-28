@@ -11,6 +11,9 @@
    def show
      
      @post = Post.friendly.find(params[:id])
+     @category = Category.find(params[:id])
+     @posts = Post.order(updated_at: :desc).limit(3);
+     
      
      @comments = Comment.where(post_id: @post.id).order("created_at DESC")
      
