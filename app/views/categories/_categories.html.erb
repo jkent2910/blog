@@ -1,0 +1,8 @@
+<ul>
+  <% category.posts.order(:title).uniq.each do |post| %>
+
+  <h4 class="similar_posts">
+    <%= link_to post.title, post %>
+  </h4>
+  <% end %>
+</ul>
