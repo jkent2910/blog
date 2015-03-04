@@ -38,17 +38,22 @@
     </h4>
     </div>
   </div>
-  
-
 </div>
 
 <div class="container-fluid">
-  <div clas="post-wrapper">
     <div class="row">
       <div class="col-md-8 col-lg-8">
         <p class="post_content">
           <%= @post.content.html_safe %>
         </p>
+      </div>
+      <div class="col-md-4 col-lg-4">
+        <div class="blog-sidebar">
+          <%= link_to image_tag("sidebar_mini.png", :alt => "sidebar_minicourse", :class => "mini_course_sidebar"), "/course" %>
+          <%= link_to image_tag("signup.png", :alt => "signup", :class => "mini_course_sidebar"), "mailto:jkent2910@gmail.com" %>
+        </div>
+      </div>
+     </div>
   <div class="row">
 
     <div class="col-md-4-offset-6 col-lg-4-offset-6 text-center">
@@ -127,21 +132,7 @@
 
         
         --->
-        
-        
-        
-        
-        
 
-    </div>
-      <div class="col-md-4 col-lg-4">
-        <div class="blog-sidebar">
-          <%= link_to image_tag("sidebar_mini.png", :alt => "sidebar_minicourse", :class => "mini_course_sidebar"), "/course" %>
-          <%= link_to image_tag("signup.png", :alt => "signup", :class => "mini_course_sidebar"), "mailto:jkent2910@gmail.com" %>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 <!---- not working yet 
 <div class="container-fluid">
