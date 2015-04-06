@@ -4,4 +4,8 @@ class PagesController < ApplicationController
 
   def story
   end
+  
+  def hire
+  end
+  
 end

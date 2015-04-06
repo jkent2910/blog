@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   get '/course' => 'pages#course'
   get '/story' => 'pages#story'
+  get '/work-with-me' => 'pages#hire'
   
   resources :posts do
     resources :comments
