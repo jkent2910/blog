@@ -42,7 +42,7 @@ gem 'metamagic'
 
 gem 'social-share-button'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 gem 'figaro', :groups => [:development, :production]
 
