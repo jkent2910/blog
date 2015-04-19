@@ -59,9 +59,19 @@ h2.post_title {
 h1.course {
   font-family: 'Comfortaa', cursive;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 400;
   color: #6961FF;
   text-align: center;
+  display: inline;
+}
+
+h1#strong {
+  font-family: 'Comfortaa', cursive;
+  font-size: 24px;
+  font-weight: 900;
+  color: #FF0054;
+  text-align: center;  
+  display: inline;
 }
 
 h4.similar_posts {
